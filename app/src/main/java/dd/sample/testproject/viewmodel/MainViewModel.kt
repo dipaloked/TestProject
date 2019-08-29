@@ -23,7 +23,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application){
     fun getTitle(): MutableLiveData<String> = title
     fun getError(): MutableLiveData<String> = errorMessage
 
-    private fun loadItems(){
+    fun loadItems(){
 
         if(NetManager.isConnected(getApplication()))
             ItemRepository.getItems()
@@ -37,6 +37,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application){
                     errorMessage.value=error.localizedMessage
                 })
         else
-            errorMessage.value="Check your internet connection"
+            errorMessage.value="Check your internet connectivity"
     }
 }

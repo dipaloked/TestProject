@@ -18,7 +18,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        dataBinding= DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        dataBinding= DataBindingUtil.setContentView(this, R.layout.activity_main)
         supportActionBar?.title=""// reset actionbar's default title
 
         val mainViewModel=ViewModelProviders.of(this).get(MainViewModel::class.java)
